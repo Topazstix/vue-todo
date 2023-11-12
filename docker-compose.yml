@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:8080"
+    volumes:
+      - ./my-todo-app/todo:/usr/src/app
+      - /usr/src/app/node_modules
+    command: npm run serve
+    environment:
+      - NODE_ENV=development
